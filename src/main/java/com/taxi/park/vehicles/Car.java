@@ -2,38 +2,71 @@ package com.taxi.park.vehicles;
 
 public class Car implements Vehicle {
     public String model;
-    private final double fuelConsumption;
-    private final double cost;
+    private double fuelConsumption;
+    private double cost;
     private double passengerCapacity;
-    private final boolean isHeavy;
+    private boolean isHeavy;
+    private String type;
 
-    public Car(String model, double fuelConsumption, double cost, double passengerCapacity, boolean isHeavy) {
+    public Car(String model, double fuelConsumption, double cost, double passengerCapacity, boolean isHeavy, String type) {
         this.model = model;
         this.fuelConsumption = fuelConsumption;
         this.cost = cost;
         this.passengerCapacity = passengerCapacity;
         this.isHeavy = isHeavy;
+        this.type = type;
     }
 
-    public boolean getWeight() {
-        return isHeavy;
-    }
-    public double getPassengerCapacity() {
-        return passengerCapacity;
+    // Геттеры
+    public String getModel() {
+        return model;
     }
 
-    public void setPassengerCapacity(int passengerCapacity) {
-        this.passengerCapacity = passengerCapacity;
-    }
     @Override
-    public double getFuelConsumption()
-    {
+    public double getFuelConsumption() {
         return fuelConsumption;
     }
 
     @Override
-    public double getCost()
-    {
+    public double getCost() {
         return cost;
+    }
+
+    public double getPassengerCapacity() {
+        return passengerCapacity;
+    }
+
+    @Override
+    public boolean getisHeavy() {
+        return isHeavy;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    // Сеттеры
+    public void setModel (String model){
+        this.model = model;
+    }
+
+    public void setFuelConsumption ( double fuelConsumption){
+        this.fuelConsumption = fuelConsumption;
+    }
+
+    public void setCost ( double cost){
+        this.cost = cost;
+    }
+
+    public void setPassengerCapacity ( double passengerCapacity){
+        this.passengerCapacity = passengerCapacity;
+    }
+
+    public void setHeavy ( boolean isHeavy){
+        this.isHeavy = isHeavy;
+    }
+
+    public void setType ( String type) {
+        this.type = type;
     }
 }

@@ -1,5 +1,6 @@
 package com.taxi.park.taxi;
 
+import com.taxi.park.vehicles.Car;
 import com.taxi.park.vehicles.Vehicle;
 
 public class TaxiPark {
@@ -46,5 +47,38 @@ public class TaxiPark {
             }
         }
         return null;
+    }
+
+    public void removeVehicle(int index) {
+        if (index < 0 || index >= size) {
+            System.out.println("Некорректный индекс.");
+            return;
+        }
+
+        for (int i = index; i < size - 1; i++) {
+            vehicles[i] = vehicles[i + 1];
+        }
+
+        vehicles[size - 1] = null;
+        size--;
+
+        System.out.println("Машина удалена.");
+    }
+
+    public void updateVehicle(int index, String model, double fuelConsumption, double cost, double passengerCapacity, boolean isHeavy, String type) {
+        if (index < 0 || index >= size) {
+            System.out.println("Некорректный индекс.");
+            return;
+        }
+
+        if (vehicles[index-1] instanceof Car car) {
+            car.setModel(model);
+            car.setFuelConsumption(fuelConsumption);
+            car.setCost(cost);
+            car.setPassengerCapacity(passengerCapacity);
+            car.setHeavy(isHeavy);
+            car.setType(type);
+            System.out.println("Машина обновлена.");
+        }
     }
 }
