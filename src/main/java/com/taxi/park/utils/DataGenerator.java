@@ -20,14 +20,14 @@ public class DataGenerator {
             if (passengerCapacity > 5){
                 isHeavy = true;
                 if (passengerCapacity < 7){
-                    cars[i] = new Car(model, fuelConsumption * 2, Math.random() * 10000 + 5000 * SUV.multiplier, passengerCapacity, isHeavy, SUV.type);
+                    cars[i] = new Car(model, fuelConsumption * 2, Math.random() * 10000 + 5000 * SUV.multiplier, passengerCapacity, isHeavy, SUV.type, Math.round(200 + Math.random() * 100));
                 }
                 else {
-                    cars[i] = new Car(model, fuelConsumption * 2, Math.random() * 10000 + 5000 * Minivan.multiplier, passengerCapacity, isHeavy, Minivan.type);
+                    cars[i] = new Car(model, fuelConsumption * 2, Math.random() * 10000 + 5000 * Minivan.multiplier, passengerCapacity, isHeavy, Minivan.type, Math.round(300 + Math.random() * 100));
                 }
             }
             else {
-                cars[i] = new Car(model, fuelConsumption, Math.random() * 10000 + 5000, passengerCapacity, isHeavy, LightCar.type);
+                cars[i] = new Car(model, fuelConsumption, Math.random() * 10000 + 5000, passengerCapacity, isHeavy, LightCar.type, Math.round(100 + Math.random() * 100));
             }
         }
         return cars;

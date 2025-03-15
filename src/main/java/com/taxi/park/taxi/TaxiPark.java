@@ -81,4 +81,14 @@ public class TaxiPark {
             System.out.println("Машина обновлена.");
         }
     }
+
+    public void removeVehicleByNumber(double number) {
+        for (int i = 0; i < size; i++) {
+            if (vehicles[i].getNumber() == number) {
+                removeVehicle(i);
+                return;
+            }
+        }
+        System.out.println("Машина с номером " + number + " не найдена.");
+    }
 }

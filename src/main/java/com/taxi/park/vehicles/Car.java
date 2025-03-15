@@ -7,14 +7,16 @@ public class Car implements Vehicle {
     private double passengerCapacity;
     private boolean isHeavy;
     private String type;
+    private double number;
 
-    public Car(String model, double fuelConsumption, double cost, double passengerCapacity, boolean isHeavy, String type) {
+    public Car(String model, double fuelConsumption, double cost, double passengerCapacity, boolean isHeavy, String type, double number) {
         this.model = model;
         this.fuelConsumption = fuelConsumption;
         this.cost = cost;
         this.passengerCapacity = passengerCapacity;
         this.isHeavy = isHeavy;
         this.type = type;
+        this.number = number;
     }
 
     // Геттеры
@@ -36,7 +38,6 @@ public class Car implements Vehicle {
         return passengerCapacity;
     }
 
-    @Override
     public boolean getisHeavy() {
         return isHeavy;
     }
@@ -44,6 +45,8 @@ public class Car implements Vehicle {
     public String getType() {
         return type;
     }
+
+    public double getNumber(){return number;}
 
     // Сеттеры
     public void setModel (String model){
@@ -68,5 +71,9 @@ public class Car implements Vehicle {
 
     public void setType ( String type) {
         this.type = type;
+    }
+
+    public void setNumber ( double number){
+        this.number = number;
     }
 }
